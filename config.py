@@ -1,43 +1,43 @@
 class config:
     
     #Client
-    API_ID = 0
-    API_HASH = "0"
-    BOT_TOKEN = "0:0-0"
-    BOT_NAME = "Your_Bot_Name"
-    BOT_USERNAME = "Your_Bot_Username"
-    BOT_ID = 0
+    API_ID = 26249286
+    API_HASH = "4e3bf0b014fda4ac752e8f4ab854279b"
+    BOT_TOKEN = "7830572812:AAFljrsYesFuYfg4skV7KvGuecMexT2X6w4"
+    BOT_NAME = "GODxMUSIC"
+    BOT_USERNAME = "GODxMUSIC_probot"
+    BOT_ID = 7830572812
     WORKERS = 30
     MAX_MESSAGE_CACHE_SIZE = 100
     MAX_CONCURRENT_TRANSMISSIONS = 10
     
      
     #Git
-    GIT_USERNAME = "Your_Git_Username"
+    GIT_USERNAME = "Slayer123700"
     GIT_URL_WITH_TOKEN = "https://Your_Git_Token@github.com/Your_Git_Username/Yumeko.git" 
 
 
     #Info
     BOT_VERSION = "x"
-    OWNER_ID = 5630057244
-    OWNER_USERNAME = "senpaiii10"
-    SUPPORT_CHAT = -1002069412308
+    OWNER_ID = 6018803920
+    OWNER_USERNAME = "slayer1237"
+    SUPPORT_CHAT = -1002333824980
     SUPPORT_CHAT_USERNAME = "Domihoes"
     SUPPORT_CHAT_LINK = "https://t.me/Domihoes"
-    LOG_CHANNEL = -1001625036774
-    ERROR_LOG_CHANNEL = -1001625036774
+    LOG_CHANNEL = -1002392274240
+    ERROR_LOG_CHANNEL = -1002392274240
     DOWNLOAD_LOCATION = "./downloads"
     COMMAND_PREFIXES = ["/" , "!" , "." , "#" , "$" , "%" , "&" , "?"] 
     CMD_STARTERS = "/.!&#%$"
-    STATS_IMG_URL = "https://files.catbox.moe/d69tm0.jpg"
-    START_IMG_URL = "https://files.catbox.moe/wybrme.jpg"
-    HELP_IMG_URL = "https://files.catbox.moe/j3tdbi.jpg"
-    ALIVE_IMG_URL = "https://files.catbox.moe/w4t9cj.jpg"
+    STATS_IMG_URL = "https://i.ibb.co/gFg5XstQ/photo-2025-05-24-04-00-24-7507857220025974820.jpg"
+    START_IMG_URL = "https://i.ibb.co/gFg5XstQ/photo-2025-05-24-04-00-24-7507857220025974820.jpg"
+    HELP_IMG_URL = "https://files.catbox.moe/bggrlh.jpg"
+    ALIVE_IMG_URL = "https://files.catbox.moe/f3yuiy.jpg"
     
     
     #Database
-    MONGODB_URI = "mongodb://localhost:27017" # Use Local Hosted Or Atlas !!
-    DATABASE_NAME = "Frieren"
+    MONGODB_URI = "mongodb+srv://musicbotxd:musicbotxd@cluster0.6thyk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0" # Use Local Hosted Or Atlas !!
+    DATABASE_NAME = "musicbot"
 
     #API
     ARQ_API_KEY = "RLWCED-WZASYO-AWOLTB-ITBWTP-ARQ"
