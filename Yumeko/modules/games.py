@@ -69,7 +69,7 @@ async def _daily(client,message):
         await gamesdb.update_one({'user_id' : user_id},{'$set' : {'coins' : coins + 10000}},upsert=True)
         await write_last_collection_time_today(user_id,datetime.datetime.now().timestamp())
         return await message.reply_text("🎁 Yᴏᴜ ʜᴀᴠᴇ ᴄʟᴀɪᴍᴇᴅ ʏᴏᴜʀ ᴅᴀɪʟʏ ʙᴏɴᴜs ᴏғ 10,𝟶𝟶𝟶 ᴅᴀʟᴄs!\n• Cᴜʀʀᴇɴᴛ ʙᴀʟᴀɴᴄᴇ ✑ `{0:,}`ᴅᴀʟᴄs".format(coins+10000))    
-    await message.reply_text("ʏᴏᴜ ᴄᴀɴ ᴄʟᴀɪᴍ ʏᴏᴜʀ ᴅᴀɪʟʏ ʙᴏɴᴜs ɪɴ ᴀʀᴏᴜɴᴅ `{0}`".format(get_readable_time(y)))  
+    await message.reply_text("ʏᴏᴜ ᴄᴀɴ ᴄʟᴀɪᴍ ʏᴏᴜʀ ᴅᴀɪʟʏ ʙᴏɴᴜs ɪɴ ᴀʀᴏᴜɴᴅ `${0}`".format(get_readable_time(y)))  
     
     
     
@@ -84,7 +84,7 @@ async def _weekly(client,message):
         await gamesdb.update_one({'user_id' : user_id},{'$set' : {'coins' : coins + 50000}},upsert=True)
         await write_last_collection_time_weekly(user_id,datetime.datetime.now().timestamp())
         return await message.reply_text("🎁 Yᴏᴜ ʜᴀᴠᴇ ᴄʟᴀɪᴍᴇᴅ ʏᴏᴜʀ ᴡᴇᴇᴋʟʏ ʙᴏɴᴜs ᴏғ 50,000 ᴅᴀʟᴄs!\n• ᴛᴏᴛᴀʟ ᴅᴀʟᴄs ✑ `{0:,}` ᴅᴀʟᴄs".format(coins+50000))    
-    await message.reply_text("ʏᴏᴜ ᴄᴀɴ ᴄʟᴀɪᴍ ʏᴏᴜʀ ᴡᴇᴇᴋʟʏ ʙᴏɴᴜs ɪɴ ᴀʀᴏᴜɴᴅ `{0}`".format(get_readable_time(y)))
+    await message.reply_text("ʏᴏᴜ ᴄᴀɴ ᴄʟᴀɪᴍ ʏᴏᴜʀ ᴡᴇᴇᴋʟʏ ʙᴏɴᴜs ɪɴ ᴀʀᴏᴜɴᴅ `${0}`".format(get_readable_time(y)))
                          
                              
                              
@@ -148,7 +148,7 @@ async def trivia_callback(client, query):
     new_wallet = coins + 10000
     await gamesdb.update_one({'user_id': user_id}, {'$set': {'coins': new_wallet}})
 
-    message_text = f"🟢 Wow! The answer **{chosen_option.title()}** was right. You got 10,000 dalcs.\nTotal balance: `{new_wallet:,}` dalcs"
+    message_text = f"🟢 Wow! The answer **{chosen_option.title()}** was right. You got $10,000 dalcs.\nTotal balance: `{new_wallet:,}` dalcs"
     return await client.send_message(query.message.chat.id,message_text)
 
 
@@ -198,11 +198,11 @@ async def _bet(client,message):
   if not user_won:
       new_wallet = coins - to_bet
       await gamesdb.update_one({'user_id' : user.id}, {'$set' : {'coins' : new_wallet}})
-      return await message.reply_text("🛑 ᴛʜᴇ ᴄᴏɪɴ ʟᴀɴᴅᴇᴅ ᴏɴ {0}!\n• ʏᴏᴜ ʟᴏsᴛ `{1:,}` ᴄᴏɪɴs\n• ᴛᴏᴛᴀʟ ʙᴀʟᴀɴᴄᴇ : `{2:,}` ᴅᴀʟᴄs".format(rnd,to_bet,new_wallet))
+      return await message.reply_text("🛑 ᴛʜᴇ ᴄᴏɪɴ ʟᴀɴᴅᴇᴅ ᴏɴ ${0}!\n• ʏᴏᴜ ʟᴏsᴛ `{1:,}` ᴄᴏɪɴs\n• ᴛᴏᴛᴀʟ ʙᴀʟᴀɴᴄᴇ : `{2:,}` ᴅᴀʟᴄs".format(rnd,to_bet,new_wallet))
   else:
       new_wallet = coins + to_bet
       await gamesdb.update_one({'user_id' : user.id}, {'$set' : {'coins' : new_wallet}})
-      return await message.reply_text("✅ ᴛʜᴇ ᴄᴏɪɴ ʟᴀɴᴅᴇᴅ ᴏɴ {0}!\nʏᴏᴜ ᴡᴏɴ `{1:,}` ᴄᴏɪɴs\nᴛᴏᴛᴀʟ ʙᴀʟᴀɴᴄᴇ : `{2:,}` ᴅᴀʟᴄs".format(rnd,to_bet,new_wallet)) 
+      return await message.reply_text("✅ ᴛʜᴇ ᴄᴏɪɴ ʟᴀɴᴅᴇᴅ ᴏɴ ${0}!\nʏᴏᴜ ᴡᴏɴ `{1:,}` ᴄᴏɪɴs\nᴛᴏᴛᴀʟ ʙᴀʟᴀɴᴄᴇ : `{2:,}` ᴅᴀʟᴄs".format(rnd,to_bet,new_wallet)) 
      
 
 @app.on_message(filters.command("dart", prefixes=config.COMMAND_PREFIXES))
@@ -238,12 +238,12 @@ async def _bet(client,message):
       new_wallet = coins - to_bet
       await gamesdb.update_one({'user_id' : user.id}, {'$set' : {'coins' : new_wallet}})
       await asyncio.sleep(5)
-      return await msg.edit("🛑 sᴀᴅ ᴛᴏ sᴀʏ! ʙᴜᴛ ʏᴏᴜ ʟᴏsᴛ `{0:,}` ᴅᴀʟᴄs\n• ᴄᴜʀᴇᴇɴᴛ ʙᴀʟᴀɴᴄᴇ ✑ `{1:,}` ᴅᴀʟᴄs".format(to_bet,new_wallet))
+      return await msg.edit("🛑 sᴀᴅ ᴛᴏ sᴀʏ! ʙᴜᴛ ʏᴏᴜ ʟᴏsᴛ `${0:,}` ᴅᴀʟᴄs\n• ᴄᴜʀᴇᴇɴᴛ ʙᴀʟᴀɴᴄᴇ ✑ `{1:,}` ᴅᴀʟᴄs".format(to_bet,new_wallet))
   else:
       new_wallet = coins + to_bet
       await gamesdb.update_one({'user_id' : user.id}, {'$set' : {'coins' : new_wallet}})
       await asyncio.sleep(5)
-      return await msg.edit("✅ ᴡᴏᴡ! ʏᴏᴜ ᴡᴏɴ `{0:,}` ᴅᴀʟᴄs\n• ᴄᴜʀᴇᴇɴᴛ ʙᴀʟᴀɴᴄᴇ ✑ `{1:,}`ᴅᴀʟᴄs.".format(to_bet,new_wallet))
+      return await msg.edit("✅ ᴡᴏᴡ! ʏᴏᴜ ᴡᴏɴ `${0:,}` ᴅᴀʟᴄs\n• ᴄᴜʀᴇᴇɴᴛ ʙᴀʟᴀɴᴄᴇ ✑ `{1:,}`ᴅᴀʟᴄs.".format(to_bet,new_wallet))
      
       
 @app.on_message(filters.command("bowl", prefixes=config.COMMAND_PREFIXES))
@@ -279,12 +279,12 @@ async def _bet(client,message):
       new_wallet = coins - to_bet
       await gamesdb.update_one({'user_id' : user.id}, {'$set' : {'coins' : new_wallet}})
       await asyncio.sleep(5)
-      return await msg.edit("🛑 sᴀᴅ ᴛᴏ sᴀʏ! ʙᴜᴛ ʏᴏᴜ ʟᴏsᴛ `{0:,}` ᴅᴀʟᴄs\n• ᴄᴜʀᴇᴇɴᴛ ʙᴀʟᴀɴᴄᴇ ✑ `{1:,}` ᴅᴀʟᴄs".format(to_bet,new_wallet))
+      return await msg.edit("🛑 sᴀᴅ ᴛᴏ sᴀʏ! ʙᴜᴛ ʏᴏᴜ ʟᴏsᴛ `${0:,}` ᴅᴀʟᴄs\n• ᴄᴜʀᴇᴇɴᴛ ʙᴀʟᴀɴᴄᴇ ✑ `{1:,}` ᴅᴀʟᴄs".format(to_bet,new_wallet))
   else:
       new_wallet = coins + to_bet
       await gamesdb.update_one({'user_id' : user.id}, {'$set' : {'coins' : new_wallet}})
       await asyncio.sleep(5)
-      return await msg.edit("✅ ᴡᴏᴡ! ʏᴏᴜ ᴡᴏɴ `{0:,}` ᴅᴀʟᴄs\n• ᴄᴜʀᴇᴇɴᴛ ʙᴀʟᴀɴᴄᴇ ✑ `{1:,}` ᴅᴀʟᴄs.".format(to_bet,new_wallet))
+      return await msg.edit("✅ ᴡᴏᴡ! ʏᴏᴜ ᴡᴏɴ `${0:,}` ᴅᴀʟᴄs\n• ᴄᴜʀᴇᴇɴᴛ ʙᴀʟᴀɴᴄᴇ ✑ `{1:,}` ᴅᴀʟᴄs.".format(to_bet,new_wallet))
   
 
 @app.on_message(filters.command("basket", prefixes=config.COMMAND_PREFIXES))
@@ -320,12 +320,12 @@ async def _bet(client,message):
       new_wallet = coins - to_bet
       await gamesdb.update_one({'user_id' : user.id}, {'$set' : {'coins' : new_wallet}})
       await asyncio.sleep(5)
-      return await msg.edit("🛑 sᴀᴅ ᴛᴏ sᴀʏ! ʙᴜᴛ ʏᴏᴜ ʟᴏsᴛ `{0:,}` ᴅᴀʟᴄs\n• ᴄᴜʀᴇᴇɴᴛ ʙᴀʟᴀɴᴄᴇ ✑ `{1:,}` ᴅᴀʟᴄs".format(to_bet,new_wallet))
+      return await msg.edit("🛑 sᴀᴅ ᴛᴏ sᴀʏ! ʙᴜᴛ ʏᴏᴜ ʟᴏsᴛ `${0:,}` ᴅᴀʟᴄs\n• ᴄᴜʀᴇᴇɴᴛ ʙᴀʟᴀɴᴄᴇ ✑ `{1:,}` ᴅᴀʟᴄs".format(to_bet,new_wallet))
   else:
       new_wallet = coins + to_bet
       await gamesdb.update_one({'user_id' : user.id}, {'$set' : {'coins' : new_wallet}})
       await asyncio.sleep(5)
-      return await msg.edit("✅ ᴡᴏᴡ! ʏᴏᴜ ᴡᴏɴ `{0:,}` ᴅᴀʟᴄs\n• ᴄᴜʀᴇᴇɴᴛ ʙᴀʟᴀɴᴄᴇ ✑ `{1:,}` ᴅᴀʟᴄs.".format(to_bet,new_wallet))
+      return await msg.edit("✅ ᴡᴏᴡ! ʏᴏᴜ ᴡᴏɴ `${0:,}` ᴅᴀʟᴄs\n• ᴄᴜʀᴇᴇɴᴛ ʙᴀʟᴀɴᴄᴇ ✑ `{1:,}` ᴅᴀʟᴄs.".format(to_bet,new_wallet))
   
 @app.on_message(filters.command("pay", prefixes=config.COMMAND_PREFIXES) & filters.group)
 async def _pay(client,message):
@@ -362,7 +362,7 @@ async def _pay(client,message):
         await gamesdb.update_one({'user_id' : from_user.id},{'$set' : {'coins' : fcoins - amount }})
     else:
         await gamesdb.update_one({'user_id' : to_user.id},{'$set' : {'coins' : tcoins + amount }})
-    await message.reply_text("sᴜᴄᴄᴇss! {0} ᴘᴀɪᴅ {1:,} ᴅᴀʟᴄs ᴛᴏ {2}.".format(from_user.mention,amount,to_user.mention))
+    await message.reply_text("sᴜᴄᴄᴇss! ${0} ᴘᴀɪᴅ {1:,} ᴅᴀʟᴄs ᴛᴏ {2}.".format(from_user.mention,amount,to_user.mention))
 
 
 @app.on_message(filters.command(["gametop","leaderboard"], prefixes=config.COMMAND_PREFIXES))
@@ -388,10 +388,10 @@ async def _top(client,message):
             
             coins = i["coins"]
             if counter == 1:
-               msg += f"{counter:02d}.**👑 {link}** ⪧ {coins:,}\n"
+               msg += f"{counter:02d}.**👑 {link}** ⪧ ${coins:,}\n"
                 
             else:
-                msg += f"{counter:02d}.**👤 {link}** ⪧ {coins:,}\n"
+                msg += f"{counter:02d}.**👤 {link}** ⪧ ${coins:,}\n"
             counter += 1
     await message.reply(msg,disable_web_page_preview=True)
     
@@ -401,7 +401,7 @@ async def _bal(client,message):
     if not await is_player(user.id):
         await create_account(user.id,message.from_user.username)
     coins = await user_wallet(user.id)
-    await message.reply("⁕ {0}'s ᴡᴀʟʟᴇᴛ.\n≪━─━─━─━─◈─━─━─━─━≫\n**Đ ⪧** `{1:,}` \n**≪━─━─━─━─◈─━─━─━─━≫".format(user.mention,coins))
+    await message.reply("⁕ ${0}'s ᴡᴀʟʟᴇᴛ.\n≪━─━─━─━─◈─━─━─━─━≫\n**Đ ⪧** `{1:,}` \n**≪━─━─━─━─◈─━─━─━─━≫".format(user.mention,coins))
 
     
     
