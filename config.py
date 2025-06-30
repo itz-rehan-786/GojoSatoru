@@ -1,12 +1,12 @@
 class config:
     
     #Client
-    API_ID = 0
-    API_HASH = "0"
-    BOT_TOKEN = "0:0-0"
-    BOT_NAME = "Your_Bot_Name"
-    BOT_USERNAME = "Your_Bot_Username"
-    BOT_ID = 0
+    API_ID = 27323120
+    API_HASH = "8e82c0f9e36066f84ad663ab11ab0637"
+    BOT_TOKEN = "7968730527:AAEyDGpTfUumek80xnbUw4MRHRW343gzTMY"
+    BOT_NAME = "Gojo Satoru"
+    BOT_USERNAME = "Gojo_pro_xrobot"
+    BOT_ID = 7968730527
     WORKERS = 30
     MAX_MESSAGE_CACHE_SIZE = 100
     MAX_CONCURRENT_TRANSMISSIONS = 10
@@ -19,20 +19,20 @@ class config:
 
     #Info
     BOT_VERSION = "x"
-    OWNER_ID = 5630057244
-    OWNER_USERNAME = "senpaiii10"
-    SUPPORT_CHAT = -1002069412308
-    SUPPORT_CHAT_USERNAME = "Domihoes"
-    SUPPORT_CHAT_LINK = "https://t.me/Domihoes"
-    LOG_CHANNEL = -1001625036774
-    ERROR_LOG_CHANNEL = -1001625036774
+    OWNER_ID = 7775259302
+    OWNER_USERNAME = "ituuw"
+    SUPPORT_CHAT = -1002272021040
+    SUPPORT_CHAT_USERNAME = "ituua"
+    SUPPORT_CHAT_LINK = "https://t.me/ituua"
+    LOG_CHANNEL = -1002272021040
+    ERROR_LOG_CHANNEL = -1002272021040
     DOWNLOAD_LOCATION = "./downloads"
     COMMAND_PREFIXES = ["/" , "!" , "." , "#" , "$" , "%" , "&" , "?"] 
     CMD_STARTERS = "/.!&#%$"
-    STATS_IMG_URL = "https://files.catbox.moe/d69tm0.jpg"
-    START_IMG_URL = "https://files.catbox.moe/wybrme.jpg"
-    HELP_IMG_URL = "https://files.catbox.moe/j3tdbi.jpg"
-    ALIVE_IMG_URL = "https://files.catbox.moe/w4t9cj.jpg"
+    STATS_IMG_URL = "https://files.catbox.moe/gd0kx5.jpg"
+    START_IMG_URL = "https://files.catbox.moe/gtjzw8.jpg"
+    HELP_IMG_URL = "https://files.catbox.moe/n9w6g2.jpg"
+    ALIVE_IMG_URL = "https://files.catbox.moe/7psvnp.jpg"
     
     
     #Database
