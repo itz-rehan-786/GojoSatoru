@@ -186,7 +186,7 @@ class Memify:
 memify = Memify()
 
 
-@app.on_message(filters.command("getsticker" , prefixes=config.COMMAND_PREFIXES))
+@app.on_message(filters.command("getswticker" , prefixes=config.COMMAND_PREFIXES))
 async def getsticker_(self: Client, ctx: Message):
     if not ctx.reply_to_message:
         return await ctx.reply("𝖯𝗅𝖾𝖺𝗌𝖾 𝗋𝖾𝗉𝗅𝗒 𝗍𝗈 𝖺 𝗌𝗍𝗂𝖼𝗄𝖾𝗋 𝗍𝗈 𝗎𝗌𝖾 𝗍𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽.")
