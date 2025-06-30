@@ -3,7 +3,7 @@ class config:
     #Client
     API_ID = 27323120
     API_HASH = "8e82c0f9e36066f84ad663ab11ab0637"
-    BOT_TOKEN = "7968730527:AAEyDGpTfUumek80xnbUw4MRHRW343gzTMY"
+    BOT_TOKEN = "7968730527:AAEyKosqaWB3UTY51pwA9ZnS2opkcnRIcfA"
     BOT_NAME = "Gojo Satoru"
     BOT_USERNAME = "Gojo_pro_xrobot"
     BOT_ID = 7968730527
