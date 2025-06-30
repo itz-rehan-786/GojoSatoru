@@ -112,9 +112,6 @@ async def start_cmd(_, message : Message):
     await sleep(0.8)
     await x.delete()
     
-    await message.reply_cached_media(file_id = "CAACAgUAAxkBAAJuUGeBadZTdf_CjZY5sg_-DiHVwN6NAAI4FAACMBsIVIcDmYcfk1ruHgQ")    
-    
-    await sleep(0.2)
     
     user_mention = message.from_user.mention(style="md")
     bot_mention = app.me.mention(style="md")
