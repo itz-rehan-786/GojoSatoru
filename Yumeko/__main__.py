@@ -53,23 +53,23 @@ def get_paginated_buttons(page=1, items_per_page=15):
     # Navigation buttons logic
     if page == 1:  # First page: Next and Close vertically
         button_rows.append([
-            InlineKeyboardButton("➡️", callback_data=f"area_{page + 1}")
+            InlineKeyboardButton("➡", callback_data=f"area_{page + 1}")
         ])
         button_rows.append([
             InlineKeyboardButton("🗑️", callback_data="delete")
         ])
     elif page == total_pages:  # Last page: Back and Close vertically
         button_rows.append([
-            InlineKeyboardButton("⬅️", callback_data=f"area_{page - 1}")
+            InlineKeyboardButton("⬅", callback_data=f"area_{page - 1}")
         ])
         button_rows.append([
             InlineKeyboardButton("🗑️", callback_data="delete")
         ])
     else:  # Other pages: Back, Close, Next horizontally
         button_rows.append([
-            InlineKeyboardButton("⬅️", callback_data=f"area_{page - 1}"),
+            InlineKeyboardButton("⬅", callback_data=f"area_{page - 1}"),
             InlineKeyboardButton("🗑️", callback_data="delete"),
-            InlineKeyboardButton("➡️", callback_data=f"area_{page + 1}")
+            InlineKeyboardButton("➡", callback_data=f"area_{page + 1}")
         ])
 
     return InlineKeyboardMarkup(button_rows)
@@ -83,11 +83,11 @@ def get_main_menu_buttons():
             )
         ],
         [
-            InlineKeyboardButton("🤝 Sᴜᴘᴘᴏʀᴛ", url=config.SUPPORT_CHAT_LINK),
-            InlineKeyboardButton("👤 ᴏᴡɴᴇʀ", user_id=config.OWNER_ID)
+            InlineKeyboardButton("◇Sᴜᴘᴘᴏʀᴛ", url=config.SUPPORT_CHAT_LINK),
+            InlineKeyboardButton("❃ᴄʀᴇᴀᴛᴏʀ", user_id=config.OWNER_ID)
         ],
         [
-            InlineKeyboardButton("🆘 ʜᴇʟᴘ 🆘", callback_data="yumeko_help")
+            InlineKeyboardButton("□ʜᴇʟᴘ", callback_data="yumeko_help")
         ]
     ]
     return InlineKeyboardMarkup(buttons)
@@ -108,7 +108,7 @@ async def start_cmd(_, message : Message):
     await sleep(0.8)
     await x.edit_text("❄️")
     await sleep(0.8)
-    await x.edit_text("🕊️")
+    await x.edit_text("🔮")
     await sleep(0.8)
     await x.delete()
     
@@ -119,13 +119,10 @@ async def start_cmd(_, message : Message):
     user_mention = message.from_user.mention(style="md")
     bot_mention = app.me.mention(style="md")
     await message.reply(
-        f"**𝖧𝖾𝗒, {𝗎𝗌𝖾𝗋_𝗆𝖾𝗇𝗍𝗂𝗈𝗇} 🧸**\n"
+        f"**𝖧𝖾𝗒, {𝗎𝗌𝖾𝗋_𝗆𝖾𝗇𝗍𝗂𝗈𝗇} **\n"
         f"**𝖨 𝖺𝗆 {𝖻𝗈𝗍_𝗆𝖾𝗇𝗍𝗂𝗈𝗇} ♡ , 𝗒𝗈𝗎𝗋 𝗏𝖾𝗋𝗌𝖺𝗍𝗂𝗅𝖾 𝗆𝖺𝗇𝖺𝗀𝖾𝗆𝖾𝗇𝗍 𝖻𝗈𝗍, 𝖽𝖾𝗌𝗂𝗀𝗇𝖾𝖽 𝗍𝗈 𝗁𝖾𝗅𝗉 𝗒𝗈𝗎 𝗍𝖺𝗄𝖾 𝖼𝗈𝗇𝗍𝗋𝗈𝗅 𝗈𝖿 𝗒𝗈𝗎𝗋 𝗀𝗋𝗈𝗎𝗉𝗌 𝗐𝗂𝗍𝗁 𝖾𝖺𝗌𝖾 𝗎𝗌𝗂𝗇𝗀 𝗆𝗒 𝗉𝗈𝗐𝖾𝗋𝖿𝗎𝗅 𝗆𝗈𝖽𝗎𝗅𝖾𝗌 𝖺𝗇𝖽 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌!**\n\n"
         f"[✨]({𝖼𝗈𝗇𝖿𝗂𝗀.𝖲𝖳𝖠𝖱𝖳_𝖨𝖬𝖦_𝖴𝖱𝖫}) **𝖶𝗁𝖺𝗍 𝖨 𝖢𝖺𝗇 𝖣𝗈:**\n"
-        f" • 𝖲𝖾𝖺𝗆𝗅𝖾𝗌𝗌 𝗆𝖺𝗇𝖺𝗀𝖾𝗆𝖾𝗇𝗍 𝗈𝖿 𝗒𝗈𝗎𝗋 𝗀𝗋𝗈𝗎𝗉𝗌\n"
-        f" • 𝖯𝗈𝗐𝖾𝗋𝖿𝗎𝗅 𝗆𝗈𝖽𝖾𝗋𝖺𝗍𝗂𝗈𝗇 𝗍𝗈𝗈𝗅𝗌\n"
-        f" • 𝖥𝗎𝗇 𝖺𝗇𝖽 𝖾𝗇𝗀𝖺𝗀𝗂𝗇𝗀 𝖿𝖾𝖺𝗍𝗎𝗋𝖾𝗌\n\n"
-        f"📚 **𝖭𝖾𝖾𝖽 𝖧𝖾𝗅𝗉?**\n"
+        f"**𝖭𝖾𝖾𝖽 𝖧𝖾𝗅𝗉?**\n"
         f"𝖢𝗅𝗂𝖼𝗄 𝗍𝗁𝖾 𝖧𝖾𝗅𝗉 𝖻𝗎𝗍𝗍𝗈𝗇 𝖻𝖾𝗅𝗈𝗐 𝗍𝗈 𝗀𝖾𝗍 𝖺𝗅𝗅 𝗍𝗁𝖾 𝖽𝖾𝗍𝖺𝗂𝗅𝗌 𝖺𝖻𝗈𝗎𝗍 𝗆𝗒 𝗆𝗈𝖽𝗎𝗅𝖾𝗌 𝖺𝗇𝖽 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌.",
         reply_markup=get_main_menu_buttons(),
         invert_media = True
