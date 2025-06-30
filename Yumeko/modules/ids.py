@@ -63,7 +63,7 @@ async def get_id(client: Client, message: Message):
     await message.reply_text("".join(response))
 
 
-@app.on_message(filters.command("info", prefixes=config.config.COMMAND_PREFIXES))
+@app.on_message(filters.command("infwo", prefixes=config.config.COMMAND_PREFIXES))
 @error
 async def get_user_info(client: Client, message: Message):
     # Determine target user
